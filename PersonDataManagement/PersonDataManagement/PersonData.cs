@@ -28,34 +28,22 @@ namespace PersonDataManagement
                 Console.WriteLine(person);
             }
         }
-
-        //uc5 Check for specific name present in the list or not
-        public static void SearchSpecificPersonBasedOnName(List<Person> list, string name)
+        //uc6 Skip record from the list for age is less than 60
+        public static void RetrievePersonAgeGreaterThan60(List<Person> list)
         {
-            try
-            {
-                Person personRes = list.FindLast(Person => Person.Name == name);
-                Console.WriteLine();
-                if (personRes != null)
-                {
-                    Console.WriteLine(personRes);
-                }
-                else
-                {
-                    Console.WriteLine("Person not exist in the list");
-
-                }
-                Console.WriteLine();
-                var per = list.FindAll(Person => Person.Name == name);
-                IterateOverList(per);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            List<Person> res = list.FindAll(Person => Person.Age > 60).Skip(1).ToList();
+            Console.WriteLine();
+           // var topTwoRecords=sortedResults.Take(2).ToList();
+            Console.WriteLine("Age is greater than 60");
+            IterateOverList(res);
         }
     }
 }
+                
+        
+
+    
+
 
 
        
