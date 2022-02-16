@@ -28,8 +28,9 @@ namespace PersonDataManagement
                 Console.WriteLine(person);
             }
         }
+
         //uc5 Check for specific name present in the list or not
-        public static void SearchPersonBasedOnName(List<Person> list, string name)
+        public static void SearchSpecificPersonBasedOnName(List<Person> list, string name)
         {
             try
             {
