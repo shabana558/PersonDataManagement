@@ -28,18 +28,39 @@ namespace PersonDataManagement
                 Console.WriteLine(person);
             }
         }
-
-        //uc4 Retrieve average age in the list
-        public static void FindAverageAge(List<Person> list)
+        //uc5 Check for specific name present in the list or not
+        public static void SearchPersonBasedOnName(List<Person> list, string name)
         {
-            double averageResult = list.Average<Person>(p=>p.Age);
-            Console.WriteLine();
-            Console.WriteLine("Displaying Average result");
-            Console.WriteLine(averageResult);
-        }
+            try
+            {
+                Person personRes = list.FindLast(Person => Person.Name == name);
+                Console.WriteLine();
+                if (personRes != null)
+                {
+                    Console.WriteLine(personRes);
+                }
+                else
+                {
+                    Console.WriteLine("Person not exist in the list");
 
+                }
+                Console.WriteLine();
+                var per = list.FindAll(Person => Person.Name == name);
+                IterateOverList(per);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
+
+
+       
+
+   
+
         
 
         
