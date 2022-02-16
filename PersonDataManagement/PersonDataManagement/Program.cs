@@ -16,7 +16,8 @@ namespace PersonDataManagement
             // PersonData.FindTeenageAgeRecords(list);
             // PersonData.FindAverageAge(list);
             // PersonData.SearchSpecificPersonBasedOnName(list,"Shabana");
-            PersonData.RetrievePersonAgeGreaterThan60(list);
+          //  PersonData.RetrievePersonAgeGreaterThan60(list);
+            PersonData.RemovePerson(list, "Ambika");
             Console.ReadLine();
         }
     }

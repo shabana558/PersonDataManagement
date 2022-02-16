@@ -28,14 +28,20 @@ namespace PersonDataManagement
                 Console.WriteLine(person);
             }
         }
-        //uc6 Skip record from the list for age is less than 60
-        public static void RetrievePersonAgeGreaterThan60(List<Person> list)
+       
+        //uc7 Remove Specific Name from the list
+        public static void RemovePerson(List<Person> list,string name)
         {
-            List<Person> res = list.FindAll(Person => Person.Age > 60).Skip(1).ToList();
+            int res=list.RemoveAll(p=>p.Name == name);
             Console.WriteLine();
-           // var topTwoRecords=sortedResults.Take(2).ToList();
-            Console.WriteLine("Age is greater than 60");
-            IterateOverList(res);
+            //var topTwoRecords=sortedResults.Take(2).ToList();
+            Console.WriteLine("remove operation");
+            if (res != 0)
+                Console.WriteLine("successfully removed all records");
+            else
+                Console.WriteLine("failed to remove");
+            IterateOverList(list);
+            
         }
     }
 }
