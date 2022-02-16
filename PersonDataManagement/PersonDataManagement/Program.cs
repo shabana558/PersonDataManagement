@@ -13,7 +13,8 @@ namespace PersonDataManagement
             List<Person> list = new List<Person>();
             PersonData.AddPersonDetailsIntoList(list);
             //PersonData.RetrievePersonAgeLessThan60(list);
-            PersonData.FindTeenageAgeRecords(list);
+            // PersonData.FindTeenageAgeRecords(list);
+            PersonData.FindAverageAge(list);
             Console.ReadLine();
         }
     }

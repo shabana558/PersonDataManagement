@@ -28,14 +28,16 @@ namespace PersonDataManagement
                 Console.WriteLine(person);
             }
         }
-        //uc3 Retrieve all record from the list for age between 13 to 18
-        public static void FindTeenageAgeRecords(List<Person> list)
+
+        //uc4 Retrieve average age in the list
+        public static void FindAverageAge(List<Person> list)
         {
-            List<Person> teenageRecords = list.FindAll(person => person.Age >= 13 && person.Age <= 18);
+            double averageResult = list.Average<Person>(p=>p.Age);
             Console.WriteLine();
-            Console.WriteLine("Displaying TeenageRecords");
-            IterateOverList(teenageRecords);
+            Console.WriteLine("Displaying Average result");
+            Console.WriteLine(averageResult);
         }
+
     }
 }
         
