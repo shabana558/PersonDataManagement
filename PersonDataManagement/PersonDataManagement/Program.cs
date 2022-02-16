@@ -12,6 +12,7 @@ namespace PersonDataManagement
         {
             List<Person> list = new List<Person>();
             PersonData.AddPersonDetailsIntoList(list);
+            PersonData.RetrievePersonAgeLessThan60(list);
             Console.ReadLine();
         }
     }
