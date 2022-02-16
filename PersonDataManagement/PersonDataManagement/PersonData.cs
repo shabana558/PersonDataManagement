@@ -28,20 +28,20 @@ namespace PersonDataManagement
                 Console.WriteLine(person);
             }
         }
-        //UC2 - Retrieve top 2 records from the  list for age is less than 60
-        public static void RetrievePersonAgeLessThan60(List<Person> list)
+        //uc3 Retrieve all record from the list for age between 13 to 18
+        public static void FindTeenageAgeRecords(List<Person> list)
         {
-            List<Person> topTwoRecords = list.FindAll(p => p.Age < 60).OrderBy(a => a.Age).Take(2).ToList();
-
-          //  var personLessThan60 = list.Where(p => p.Age < 60).ToList();
-          //  var sortedResults = personLessThan60.OrderBy(p => p.Age).ToList();
-          //  Console.WriteLine();
-          //  Console.WriteLine(sortedResults);
-           Console.WriteLine();
-          ////  var topTwoRecords = sortedResults.Take(2).ToList();
-            Console.WriteLine("Top 2 records based on less Age");
-            IterateOverList(topTwoRecords);
-
+            List<Person> teenageRecords = list.FindAll(person => person.Age >= 13 && person.Age <= 18);
+            Console.WriteLine();
+            Console.WriteLine("Displaying TeenageRecords");
+            IterateOverList(teenageRecords);
         }
     }
 }
+        
+
+        
+
+        
+ 
+
